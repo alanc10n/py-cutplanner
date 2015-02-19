@@ -1,3 +1,0 @@
-class CutPlanner(object):
-    pass
-
