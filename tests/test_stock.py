@@ -18,7 +18,6 @@ class TestStock(unittest.TestCase):
 
     def test_shrink(self):
         self.stock.cut(self.piece)
-        print "{0} remaining, {1} used".format(self.stock.remaining_length, self.stock.used_length)
 
         new_len = self.stock.shrink(80)
         self.assertEqual(new_len, 80)
