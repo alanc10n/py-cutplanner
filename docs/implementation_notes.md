@@ -22,4 +22,4 @@ Put an item into the bin with the most available space.
 
 ## Off-line algorithms
 
-Off-line algorithms have a pre-set list of items, allowing further optimizations. Typically this means sorting the list in descending order. Each online algorithm <X> has an off-line counterpart <X> Decreasing.
+Off-line algorithms have a pre-set list of items, allowing further optimizations. Typically this means sorting the list in descending order. Each online algorithm &lt;X&gt; has an off-line counterpart &lt;X&gt; Decreasing.
