@@ -9,7 +9,7 @@ class Planner(object):
     def __init__(self, sizes, needed, loss=0.25):
         self.stock = []
         self.stock_sizes = sorted(sizes)
-        self.pieces_needed = needed
+        self.pieces_needed = needed.reverse
         self.cut_loss = loss
         self.cur_stock = None
 
