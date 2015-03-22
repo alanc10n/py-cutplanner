@@ -12,7 +12,8 @@ class Planner(object):
         self.cut_loss = loss
         self.cur_stock = None
 
-    def get_largest_stock(self):
+    @property
+    def largest_stock(self):
         return self.stock_sizes[-1]
 
     def cut_piece(self, piece):
