@@ -1,4 +1,5 @@
 import collections
+from stock import Stock
 
 # simple structure to keep track of a specific piece
 Piece = collections.namedtuple('Piece', 'id, length')
