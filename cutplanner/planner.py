@@ -30,3 +30,11 @@ class Planner(object):
 
         self.stock.append(self.cur_stock)
 
+    def apply_next_fit(self, piece):
+        """ Cut from current stock until unable, then move to new stock """
+        if self.cur_stock.remaining_length < piece.length + self.cut_loss:
+            # finalize current stock and get fresh stock
+            self.finalize_stock()
+            cur_stock = Stock(self.largest_stock)
+
+        self.cur_stock.cut(piece, self.cut_loss)
