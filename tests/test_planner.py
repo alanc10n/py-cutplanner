@@ -9,6 +9,14 @@ class TestPlanner(unittest.TestCase):
         loss = 0.25
         self.planner = cutplanner.Planner(sizes, needed, loss)
 
+    def test_init_pieces(self):
+        self.assertEqual(len(self.planner.pieces_needed), 3)
+        self.assertEqual(self.planner.pieces_needed[0].length, 75)
+
+    def test_init_stock(self):
+        self.assertEqual(len(self.planner.stock_sizes), 3)
+        self.assertEqual(self.planner.stock_sizes, [50, 80, 120])
+
     def test_largest_stock(self):
         largest = self.planner.largest_stock
         self.assertEqual(largest, 120)
