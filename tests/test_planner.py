@@ -28,5 +28,11 @@ class TestPlanner(unittest.TestCase):
         self.assertEqual(len(self.planner.stock), 1)
         self.assertEqual(self.planner.stock[0].length, 80)
 
+    def test_make_cuts(self):
+        self.planner.make_cuts()
+        self.assertTrue(len(self.planner.pieces_needed) == 0)
+        self.assertTrue(len(self.planner.stock) == 1)
+        self.assertEqual(self.planner.stock[0].used_length, 110.75)
+
 if __name__ == '__main__':
     unittest.main()
