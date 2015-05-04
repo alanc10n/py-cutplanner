@@ -9,7 +9,7 @@ class Stock(object):
     def __str__(self):
         pieces = ", ".join([str(p.length) for p in self.pieces])
         return "Stock: len={0}, remaining:{1} pieces: {2}".format(
-                self.length, self.remaining_length, pieces)
+            self.length, self.remaining_length, pieces)
 
     @property
     def used_length(self):
