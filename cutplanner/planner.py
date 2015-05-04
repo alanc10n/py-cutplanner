@@ -4,6 +4,7 @@ from stock import Stock
 # simple structure to keep track of a specific piece
 Piece = collections.namedtuple('Piece', 'id, length')
 
+
 class Planner(object):
 
     def __init__(self, sizes, needed, loss=0.25):
@@ -14,7 +15,7 @@ class Planner(object):
         self.cut_loss = loss
         self.cur_stock = None
 
-        #set the algorithm to use, hard code for now
+        # set the algorithm to use, hard code for now
         self.apply_algo = self.apply_next_fit
 
     @property
