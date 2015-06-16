@@ -1,3 +1,6 @@
+""" Defines an instance of stock which is cut to produce needed pieces."""
+
+
 class Stock(object):
     """ Defines a piece of stock, including planned cuts """
 
@@ -13,6 +16,7 @@ class Stock(object):
 
     @property
     def used_length(self):
+        """ Returns the length of stock already assigned for cuts."""
         return self.length - self.remaining_length
 
     def cut(self, piece, loss=0.0):

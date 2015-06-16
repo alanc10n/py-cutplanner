@@ -1,3 +1,7 @@
+""" Allows production of cutlists for a given set of required pieces, given
+a set of available stock sizes.
+"""
+
 import collections
 from .stock import Stock
 
@@ -6,6 +10,7 @@ Piece = collections.namedtuple('Piece', 'id, length')
 
 
 class Planner(object):
+    """ Object that can produce a cutlist (plan) for cutting stock. """
 
     def __init__(self, sizes, needed, loss=0.25):
         self.stock = []
@@ -20,6 +25,7 @@ class Planner(object):
 
     @property
     def largest_stock(self):
+        """ Returns the size of the largest available stock."""
         return self.stock_sizes[-1]
 
     def cut_piece(self, piece):
@@ -45,6 +51,7 @@ class Planner(object):
         self.cur_stock.cut(piece, self.cut_loss)
 
     def make_cuts(self):
+        """ Apply the cutting algorithm to generate a cut list."""
         self.cur_stock = Stock(self.largest_stock)
 
         while self.pieces_needed:
